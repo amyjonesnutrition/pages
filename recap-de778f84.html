@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Session Recap</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap">
+<style>
+body{margin:0}
+:root {
+--bg: #F4F8F8;
+--card: #FFFFFF;
+--ink: #1B2E33;
+--muted: #4A5D63;
+--teal: #136570;
+--crimson: #C2255C;
+--tint: #E3EEF0;
+--pink: #FBEAF0;
+--line: #D3E2E4;
+--display: 'Poppins', 'Segoe UI', Arial, sans-serif;
+--body: 'Lato', 'Segoe UI', Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+padding-left: max(16px, env(safe-area-inset-left, 0px));
+padding-right: max(16px, env(safe-area-inset-right, 0px));
+padding-block: 40px 32px;
+}
+.wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+h1 { font-family: var(--display); font-weight: 700; color: var(--teal); font-size: clamp(30px, 6vw, 40px); line-height: 1.15; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; font-size: 17px; }
+.controls { display: flex; gap: 10px; margin-top: 8px; }
+.controls button {
+font-family: var(--body); font-size: 15px; font-weight: 700; color: var(--teal);
+background: transparent; border: 2px solid var(--teal); border-radius: 999px; padding: 6px 16px; cursor: pointer;
+}
+.controls button:focus-visible, summary:focus-visible { outline: 3px solid var(--crimson); outline-offset: 3px; }
+details { background: var(--card); border-radius: 18px; border: 1px solid var(--line); }
+summary {
+list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 16px 18px; border-radius: 18px;
+}
+summary::-webkit-details-marker { display: none; }
+.icon { flex: none; width: 56px; height: 56px; border-radius: 50%; background: var(--tint); display: grid; place-items: center; }
+.icon svg { width: 34px; height: 34px; }
+.sumtext { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.sumtext h2 { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--teal); margin: 0; line-height: 1.25; }
+.sumtext span { color: var(--muted); font-size: 15px; }
+.chev { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; color: var(--teal); transition: transform .2s ease; }
+details[open] .chev { transform: rotate(180deg); }
+.body { padding: 0 22px 20px 90px; }
+.body ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.body li::marker { color: var(--crimson); }
+.body b { color: var(--ink); }
+.pct { font-family: var(--display); font-weight: 700; color: var(--crimson); }
+.loop { list-style: none; padding: 0 !important; counter-reset: s; }
+.loop li { counter-increment: s; position: relative; padding-left: 38px; }
+.loop li::before {
+content: counter(s); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%;
+background: var(--teal); color: var(--card); font-family: var(--display); font-weight: 700; font-size: 14px; display: grid; place-items: center;
+}
+.callout { margin-top: 14px; background: var(--tint); border-radius: 12px; padding: 12px 16px; }
+.callout p { margin: 0; }
+.coach { background: var(--pink); }
+footer { display: flex; justify-content: center; margin-top: 22px; }
+footer img { width: 40px; height: 40px; }
+@media (max-width: 520px) {
+.body { padding: 0 18px 18px 18px; }
+summary { gap: 12px; padding: 14px; }
+.icon { width: 48px; height: 48px; }
+}
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Your Session Recap</h1>
+<p class="lede">What we covered in your first session, one card for each slide. Tap a card to open it.</p>
+<div class="controls">
+<button type="button" id="openAll">Open all</button>
+<button type="button" id="closeAll">Close all</button>
+</div>
+</header>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M3 10 C9 6 13 8 16 14 S22 26 25 24 S29 20 31 22" fill="none" style="stroke:var(--teal)" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="3" style="fill:var(--crimson)"/></svg></span>
+<span class="sumtext"><h2>Your day</h2><span>Where your energy drops</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li>Your energy is good in the morning, drops in the middle of the afternoon, and you're done by 7 or 8</li>
+<li>The afternoon dip is when schoolwork gets put off and when you eat because you're bored</li>
+<li>The gym works every week because your friends picked the split ahead of time and you go on your own, so there's nothing to decide or coordinate when you get there</li>
+<li>We use the gym as the model for setting up the rest of your day</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 4 C11 4 7 9 7 15 L7 22 L4 26 L30 26 L27 22 L27 15 C27 9 23 4 17 4 Z" style="fill:var(--teal)"/><circle cx="17" cy="29" r="3" style="fill:var(--crimson)"/></svg></span>
+<span class="sumtext"><h2>Your alarm system</h2><span>How stress shows up in your body</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li>The amygdala sounds the alarm when it reads danger, and the prefrontal cortex calms it back down and does your planning and prioritizing</li>
+<li>With ADHD, the prefrontal cortex runs on less dopamine, so the alarm goes off more easily and takes longer to settle</li>
+<li>Your body reacts to three assignments due on the same day the same way it reacts to danger</li>
+<li>When the alarm is on, cortisol and adrenaline go up, so you make less stomach acid, your glucose rises and then falls, you use up magnesium, B vitamins and omega-3s faster, and you wake up through the night</li>
+<li>Nicotine, alcohol, snacks and your phone bring the alarm down fast for a short time, which is why your body keeps going back to them</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="11" cy="17" r="6" style="fill:var(--teal)"/><circle cx="25" cy="17" r="6" style="fill:var(--crimson)"/><path d="M17 17 L19 17" style="stroke:var(--ink)" stroke-width="2"/></svg></span>
+<span class="sumtext"><h2>What's happening in your body</h2><span>Your biology behind what frustrates you</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li><b>Eating when you're bored.</b> A boring task gives an ADHD brain very little dopamine, and chips or chocolate raise it within minutes, so your brain goes looking for them when you're not hungry</li>
+<li><b>Putting off schoolwork.</b> Prioritizing needs dopamine and glucose, and both are lowest in your afternoon</li>
+<li><b>The afternoon crash.</b> With no breakfast, your blood glucose drops through the day and cortisol and adrenaline rise to pull it back up, so you get irritable, crave sugar and find decisions harder</li>
+<li><b>Waking up tired.</b> Getting up to pee, nicotine and alcohol wearing off overnight, and possibly your breathing at night pull you out of deep sleep</li>
+<li><b>Nicotine.</b> It releases dopamine within seconds and takes your appetite away, and as it wears off a couple of hours later you feel restless and anxious, so your body reaches for it again</li>
+<li><b>Alcohol.</b> It calms the alarm fast, and as it wears off your brain swings the other way, so your sleep breaks up and your anxiety is higher the next day</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="5" y="17" width="6" height="12" rx="2" style="fill:var(--crimson)"/><rect x="14" y="11" width="6" height="18" rx="2" style="fill:var(--teal)"/><rect x="23" y="22" width="6" height="7" rx="2" style="fill:var(--teal)"/></svg></span>
+<span class="sumtext"><h2>Your three body systems</h2><span>From your wellness questionnaire</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li>Each percentage is how many of the symptoms you reported line up with that system</li>
+<li><span class="pct">48%</span> <b>Blood sugar.</b> Your prefrontal cortex runs on glucose, so when your blood sugar drops it gets less fuel and focus, planning and decisions get harder, and cortisol and adrenaline rise to bring it back up</li>
+<li><span class="pct">35%</span> <b>Hormones and stress.</b> Anxiety, irritability, grinding your teeth, waking at night, and signs of lower testosterone, which your body makes mostly while you sleep</li>
+<li><span class="pct">15%</span> <b>Gut.</b> Heartburn, low stomach acid and yeast overgrowth came up as high priority</li>
+<li>Yeast lives in everyone's gut in small amounts and stomach acid keeps it in check, so with less acid more of it survives, and yeast feeds on sugar and starch, which can bring cravings for bread and sweets, bloating, itchiness and foggy thinking after carbs</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 5 A12 12 0 1 1 6 12" fill="none" style="stroke:var(--teal)" stroke-width="3.5" stroke-linecap="round"/><path d="M2 8 L6 13 L11 9" fill="none" style="stroke:var(--teal)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="17" r="4" style="fill:var(--crimson)"/></svg></span>
+<span class="sumtext"><h2>Your heartburn loop</h2><span>Why the burning keeps coming back</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li>Stomach acid breaks down protein and pulls iron, zinc and B12 out of your food</li>
+</ul>
+<ul class="loop" style="margin-top:12px">
+<li>Your alarm sends fewer signals to your stomach to make acid</li>
+<li>An antacid raises the pH in your stomach, so there's less acid</li>
+<li>Food sits in your stomach longer and the pressure pushes it back up, which is the heartburn</li>
+<li>Alcohol relaxes the valve at the top of your stomach, and ibuprofen lowers the chemicals that protect your stomach lining</li>
+<li>You take another antacid, and the loop starts again at 1</li>
+</ul>
+<div class="callout"><p><b>The digestive enzyme we talked about</b> breaks down the protein, fat and carbs in your food without adding any acid.</p></div>
+</div>
+</details>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><ellipse cx="15" cy="17" rx="10" ry="6" style="fill:var(--crimson)"/><path d="M24 17 L31 11 L31 23 Z" style="fill:var(--crimson)"/><circle cx="10" cy="15.5" r="1.5" style="fill:var(--card)"/></svg></span>
+<span class="sumtext"><h2>Your nutrients</h2><span>Which nutrients your symptoms line up with</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li>Each percentage is how many of your symptoms line up with that nutrient</li>
+<li><span class="pct">40%</span> <b>Omega-3s.</b> Your brain cells are built from them and your body uses them to switch off inflammation, so when they're low, focus, memory, anxiety and mood can all get harder, and stress uses them up faster</li>
+<li><span class="pct">35 to 38%</span> <b>B1, B12 and B6.</b> Nicotine, alcohol and ibuprofen block B1, low stomach acid means less B12 gets out of your food, and alcohol breaks B6 down faster</li>
+<li><span class="pct">39% and 31%</span> <b>Iron, high and low.</b> Fatigue, foggy thinking, getting sick often and low mood are on both lists, alcohol lowers the hormone that limits how much iron you absorb, and low stomach acid means less iron gets out of your food</li>
+<li><span class="pct">33%</span> <b>Sodium.</b> Escitalopram can lower sodium, which might be why you crave salt</li>
+<li><span class="pct">26%</span> <b>Magnesium.</b> Stress and alcohol both use up magnesium faster</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="icon"><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="7" y="5" width="20" height="25" rx="3" style="fill:var(--teal)"/><path d="M11 12 H23 M11 17 H23 M11 22 H18" style="stroke:var(--card)" stroke-width="2.5" stroke-linecap="round"/><circle cx="25" cy="25" r="5" style="fill:var(--crimson)"/></svg></span>
+<span class="sumtext"><h2>Getting started on schoolwork</h2><span>Questions to ask yourself in the afternoon</span></span>
+<span class="chev" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 6 L8 11 L13 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+</summary>
+<div class="body">
+<ul>
+<li>What's hard about getting started right now?</li>
+<li>What part of this is boring?</li>
+<li>What part is unclear, like which assignment comes first or what the first step is?</li>
+<li>What's more tempting right now, my phone, food, something else?</li>
+<li>If getting started were ridiculously easy, what would that look like?</li>
+</ul>
+<div class="callout coach"><p>When you're stuck, these questions show you which part is getting in the way, so you can set up that part ahead of time.</p></div>
+</div>
+</details>
+<footer><img src="data:image/png;base64,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" alt="Amy Jones Nutrition"></footer>
+</div>
+<script>
+(function () {
+var all = document.querySelectorAll('details');
+document.getElementById('openAll').addEventListener('click', function () { all.forEach(function (d) { d.open = true; }); });
+document.getElementById('closeAll').addEventListener('click', function () { all.forEach(function (d) { d.open = false; }); });
+})();
+</script>
+</body>
+</html>
